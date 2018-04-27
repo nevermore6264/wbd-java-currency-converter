@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.text.DecimalFormat" %><%--
   Created by IntelliJ IDEA.
   User: Admin
   Date: 4/26/2018
@@ -15,12 +15,13 @@
     float rate = Float.parseFloat(request.getParameter("rate"));
     float usd = Float.parseFloat(request.getParameter("usd"));
     float vnd = rate * usd;
+    DecimalFormat formatter = new DecimalFormat("###,###,###");
 %>
 <h3>Rate: <%=rate%>
 </h3>
 <h3>USD: <%=usd%>
 </h3>
-<h3>VND: <%=vnd%>
+<h3>VND: <%=formatter.format(vnd)%>
 </h3>
 
 </body>
